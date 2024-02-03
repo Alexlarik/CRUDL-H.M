@@ -1,6 +1,15 @@
-h1{
+h1 {
     text-align: center;
 }
-.already-read{
+
+.book-list {
+    cursor: pointer;
+}
+
+.read {
     text-decoration: line-through;
+}
+
+button {
+    cursor: pointer;
 }
