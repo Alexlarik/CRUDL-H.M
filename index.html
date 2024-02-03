@@ -11,8 +11,14 @@
 <body>
     <h1>CRUDL: Book Shop</h1>
 
+    <section class="new-book">
+        <input type="text" placeholder="Add a new Book!">
+        <button onclick="onAddBook()">Add</button>
+
+    </section>
+
     <ul>
-        <li>
+        <li class="already-read">
             <span>book1</span>
             <button onclick="onRemoveBook('b101')">X</button>
         </li>
@@ -20,7 +26,7 @@
             <span>book2</span>
             <button onclick="onRemoveBook('b102')">X</button>
         </li>
-        <li>
+        <li class="already-read">
             <span>book3</span>
             <button onclick="onRemoveBook('b103')">X</button>
         </li>
