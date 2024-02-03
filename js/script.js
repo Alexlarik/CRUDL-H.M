@@ -15,13 +15,14 @@ function renderBooks() {
     const strHTMLs = gBooks.map(book => `
     <li onClick="onToggleBook('${book.id}')">
       <span class="${book.isRead ? 'read' : ''}">${book.txt}</span>
-      <button onclick="onRemoveBook('${book.id}')">X</button>
+      <button onclick="onRemoveBook(event,'${book.id}')">X</button>
     </li>
     `)
     elBooks.innerHTML = strHTMLs.join('')
 }
 
-function onRemoveBook(bookId) {
+function onRemoveBook(ev, bookId) {
+    ev.stopPropagation()
     console.log('Book Id: ', bookId)
     const idx = gBooks.findIndex(book => book.id === bookId)
     gBooks.splice(idx, 1)
