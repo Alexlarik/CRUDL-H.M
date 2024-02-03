@@ -23,6 +23,9 @@ function renderBooks() {
 
 function onRemoveBook(bookId) {
     console.log('Book Id: ', bookId)
+    const idx = gBooks.findIndex(book => book.id === bookId)
+    gBooks.splice(idx, 1)
+    renderBooks()
 }
 
 function onAddBook() {
