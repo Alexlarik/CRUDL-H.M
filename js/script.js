@@ -23,7 +23,7 @@ function renderBooks() {
 
 function onRemoveBook(ev, bookId) {
     ev.stopPropagation()
-    console.log('Book Id: ', bookId)
+    console.log('Book Id: X ', bookId)
     const idx = gBooks.findIndex(book => book.id === bookId)
     gBooks.splice(idx, 1)
     renderBooks()
@@ -38,5 +38,14 @@ function onToggleBook(bookId) {
 }
 
 function onAddBook() {
-    console.log('hi')
+
+    const elInput = document.querySelector('.new-book input')
+    const toRead = {
+        id: 'b' + Date.now() % 1000,
+        txt: elInput.value,
+        isRead: false
+    }
+    gBooks.unshift(toRead)
+    elInput.value = ''
+    renderBooks()
 }
