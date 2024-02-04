@@ -7,7 +7,7 @@ function createBooks() {
     const books = [
         { id: 'b101', title: 'Nosferatu', price: 120, imgUrl: '' },
         { id: 'b102', title: 'The Abyss', price: 80, imgUrl: '' },
-        { id: 'b103', title: 'Odyssey', price: 100, imgUrL: '' }
+        { id: 'b103', title: 'Odyssey', price: 100, imgUrl: '' }
     ]
 
     saveToStorage(STORAGE_KEY, books)
@@ -37,7 +37,7 @@ function addBook(title, price) {
 function updatePrice(bookId, newPrice) {
     const idx = gBooks.findIndex(book => book.id === bookId)
 
-    gBooks[idx].price = newPrice
+    return gBooks[idx].price = newPrice
 }
 
 function readBook(bookId) {

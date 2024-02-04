@@ -58,9 +58,8 @@ function onReadBook(bookId) {
     const elPRE = document.querySelector('pre')
 
     const book = readBook(bookId)
-    const bookSTR = JSON.stringify(book)
+    const bookSTR = JSON.stringify(book, null, 4)
     elTXT.innerText = book.title
     elPRE.innerText = bookSTR
-
-    elModal.classList.remove('hidden')
+    elModal.showModal()
 }
