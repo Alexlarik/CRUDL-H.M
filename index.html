@@ -18,23 +18,17 @@
     </section>
 
     <table class="book-list">
-        <!-- <li class="already-read">
-            <span>book1</span>
-            <button onclick="onRemoveBook('b101')">X</button>
-        </li>
-        <li>
-            <span>book2</span>
-            <button onclick="onRemoveBook('b102')">X</button>
-        </li>
-        <li class="already-read">
-            <span>book3</span>
-            <button onclick="onRemoveBook('b103')">X</button>
-        </li> -->
     </table>
+    <form class="book-details hidden">
+        <h2>Book: <span></span></h2>
+        <pre></pre>
+        <button onclick="onCloseBook()">X</button>
+    </form>
 
 
-    <script src="js/script.service.js"></script>
-    <script src="js/script.controller.js"></script>
+    <script src="js/storage.service.js"></script>
+    <script src="js/books.service.js"></script>
+    <script src="js/books.controller.js"></script>
 </body>
 
 </html>

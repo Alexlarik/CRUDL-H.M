@@ -18,7 +18,7 @@ function renderBooks() {
         <td>${book.title}</td>
         <td>${book.price}</td>
         <td class="actions">
-        <button class="read">Read</button>
+        <button class="read" onClick="onReadBook('${book.id}')">Read</button>
         <button class="update" onClick="onUpdateBook('${book.id}')">Update</button>
         <button  class="delete" onclick="onRemoveBook(event,'${book.id}')">Delete</button>
         </td>
@@ -33,13 +33,6 @@ function onRemoveBook(ev, bookId) {
     removeBook(bookId)
     renderBooks()
 }
-
-// function onToggleBook(bookId) {
-//     console.log('Book Id: ', bookId)
-//     toggleBook(bookId)
-//     renderBooks()
-
-// }
 
 function onAddBook() {
 
@@ -58,8 +51,16 @@ function onUpdateBook(bookId) {
 
 }
 
-{/* <tr>
-    <td>${book.title}</td>
-    <td>  onClick="onToggleBook('${book.id}')"</td>
-    <button onclick="onRemoveBook(event,'${book.id}')">X</button>
-    </tr> */}
+function onReadBook(bookId) {
+    console.log(bookId)
+    const elModal = document.querySelector('.book-details')
+    const elTXT = elModal.querySelector('h2 span')
+    const elPRE = document.querySelector('pre')
+
+    const book = readBook(bookId)
+    const bookSTR = JSON.stringify(book)
+    elTXT.innerText = book.title
+    elPRE.innerText = bookSTR
+
+    elModal.classList.remove('hidden')
+}
