@@ -7,13 +7,24 @@ function onInit() {
 function renderBooks() {
     const elBooks = document.querySelector('.book-list')
     const books = getBooks()
-    const strHTMLs = books.map(book => `
-    <li onClick="onToggleBook('${book.id}')">
-      <span class="${book.price}">${book.title}</span>
-      <button onclick="onRemoveBook(event,'${book.id}')">X</button>
-    </li>
-    `)
-    elBooks.innerHTML = strHTMLs.join('')
+    const strHTMLs = `
+    <tr>
+        <th class="header">Title</th>
+        <th class="header">Price</th>
+        <th class="header">Actions</th>
+    </tr>
+    ` + books.map(book => `
+    <tr class="table-row">
+        <td>${book.title}</td>
+        <td>${book.price}</td>
+        <td class="actions">
+        <button class="read">Read</button>
+        <button class="update">Update</button>
+        <button  class="delete" onclick="onRemoveBook(event,'${book.id}')">Delete</button>
+        </td>
+    </tr>
+    `).join('')
+    elBooks.innerHTML = strHTMLs
 }
 
 function onRemoveBook(ev, bookId) {
@@ -37,3 +48,9 @@ function onAddBook() {
     elInput.value = ''
     renderBooks()
 }
+
+{/* <tr>
+    <td>${book.title}</td>
+    <td>  onClick="onToggleBook('${book.id}')"</td>
+    <button onclick="onRemoveBook(event,'${book.id}')">X</button>
+    </tr> */}
