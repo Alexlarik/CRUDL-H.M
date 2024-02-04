@@ -28,3 +28,9 @@ function addBook(title) {
     }
     gBooks.unshift(toRead)
 }
+
+function updatePrice(bookId, newPrice) {
+    const idx = gBooks.findIndex(book => book.id === bookId)
+
+    gBooks[idx].price = newPrice
+}

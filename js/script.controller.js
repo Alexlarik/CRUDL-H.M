@@ -19,7 +19,7 @@ function renderBooks() {
         <td>${book.price}</td>
         <td class="actions">
         <button class="read">Read</button>
-        <button class="update">Update</button>
+        <button class="update" onClick="onUpdateBook('${book.id}')">Update</button>
         <button  class="delete" onclick="onRemoveBook(event,'${book.id}')">Delete</button>
         </td>
     </tr>
@@ -47,6 +47,14 @@ function onAddBook() {
     addBook(elInput.value)
     elInput.value = ''
     renderBooks()
+}
+
+function onUpdateBook(bookId) {
+    console.log(bookId)
+    var newPrice = +prompt('Enter a new Price: ')
+    updatePrice(bookId, newPrice)
+    renderBooks()
+
 }
 
 {/* <tr>
