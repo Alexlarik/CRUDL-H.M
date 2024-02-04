@@ -9,7 +9,7 @@ function renderBooks() {
     const books = getBooks()
     const strHTMLs = books.map(book => `
     <li onClick="onToggleBook('${book.id}')">
-      <span class="${book.isRead ? 'read' : ''}">${book.txt}</span>
+      <span class="${book.price}">${book.title}</span>
       <button onclick="onRemoveBook(event,'${book.id}')">X</button>
     </li>
     `)
@@ -23,12 +23,12 @@ function onRemoveBook(ev, bookId) {
     renderBooks()
 }
 
-function onToggleBook(bookId) {
-    console.log('Book Id: ', bookId)
-    toggleBook(bookId)
-    renderBooks()
+// function onToggleBook(bookId) {
+//     console.log('Book Id: ', bookId)
+//     toggleBook(bookId)
+//     renderBooks()
 
-}
+// }
 
 function onAddBook() {
 
