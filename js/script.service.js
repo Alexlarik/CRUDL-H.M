@@ -20,10 +20,13 @@ function removeBook(bookId) {
 //     toRead.isRead = !toRead.isRead
 // }
 
-function addBook(title) {
+function addBook(title, price) {
     const toRead = {
         id: 'b' + Date.now() % 1000,
         title,
+        price: price,
+        imgUrl: ''
+
         // isRead: false
     }
     gBooks.unshift(toRead)

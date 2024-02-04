@@ -44,7 +44,8 @@ function onRemoveBook(ev, bookId) {
 function onAddBook() {
 
     const elInput = document.querySelector('.new-book input')
-    addBook(elInput.value)
+    var price = +prompt('Enter a Price: ')
+    addBook(elInput.value, price)
     elInput.value = ''
     renderBooks()
 }
